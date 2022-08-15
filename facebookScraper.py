@@ -4,7 +4,6 @@
 import sys
 import warnings
 import re
-sys.path.append("C:\\Users\\JK844UZ\OneDrive - EY\\Desktop")
 import urllib.request
 from urllib.error import HTTPError
 #error.HTTPError
@@ -46,7 +45,7 @@ class facebookScraper:
     
     #path to chrome driver
     
-    def __init__(self,user=None,pwd=None,delay=15,path_to_chrome='C:\\Users\\JK844UZ\\OneDrive - EY\\Desktop\\scraper\\selenuim facebook scraper\\chromedriver.exe'):
+    def __init__(self,user=None,pwd=None,delay=15,path_to_chrome='chromedriver.exe'):
         self.path_to_chrome=path_to_chrome
         self.get_browser()
         self.user=user
@@ -122,7 +121,7 @@ class facebookScraper:
         for i in list_of_urls:
             result.append(self.get_fb_info(i))
         return pd.DataFrame(result)
-    def collect_page(self, pagename,depth=2,out_file='C:\\Users\\JK844UZ\OneDrive - EY\\Desktop\\posts.csv'):
+    def collect_page(self, pagename,depth=2,out_file='posts.csv'):
         # navigate to page
         fb_url='https://www.facebook.com/'+pagename
         fb_url=fb_url.replace('www',"m")
